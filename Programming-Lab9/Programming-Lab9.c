@@ -1,12 +1,13 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_SIZE 101
 
 typedef struct
 {
-	const char* surname;
-	const char* group;
+	char surname[MAX_SIZE];
+	char group[MAX_SIZE];
 } Student;
 
 int main()
@@ -21,19 +22,11 @@ int main()
 	printf("\nEnter students:\n\n");
 	for (int i = 0; i < size; i++)
 	{
-		char* surname = calloc(MAX_SIZE, sizeof(char));
-		char* group = calloc(MAX_SIZE, sizeof(char));
-
-		printf("Enter student %d:\n", i + 1);
-
 		printf("Enter surname: ");
-		gets_s(surname, MAX_SIZE);
+		gets_s(students[i].surname, MAX_SIZE);
 
 		printf("Enter group: ");
-		gets_s(group, MAX_SIZE);
-
-		students[i].surname = surname;
-		students[i].group = group;
+		gets_s(students[i].group, MAX_SIZE);
 
 		printf("\n");
 	}
