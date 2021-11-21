@@ -22,19 +22,11 @@ int main()
 	printf("\nEnter students:\n\n");
 	for (int i = 0; i < size; i++)
 	{
-		char surname[MAX_SIZE];
-		char group[MAX_SIZE];
-
-		printf("Enter student %d:\n", i + 1);
-
 		printf("Enter surname: ");
-		gets_s(surname, MAX_SIZE);
+		gets_s(students[i].surname, MAX_SIZE);
 
 		printf("Enter group: ");
-		gets_s(group, MAX_SIZE);
-
-		strcpy_s(students[i].surname, MAX_SIZE, surname);
-		strcpy_s(students[i].group, MAX_SIZE, group);
+		gets_s(students[i].group, MAX_SIZE);
 
 		printf("\n");
 	}
